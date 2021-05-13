@@ -4,8 +4,8 @@ This is a Desktop application required node js
 
 To start
 
-npm install
+#npm install
 
 for testing purposes
 To run
-npm start
+#npm start
