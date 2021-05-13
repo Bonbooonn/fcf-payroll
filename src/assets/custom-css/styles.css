@@ -1,0 +1,318 @@
+body, html {
+	font-size: 80% !important;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(217, 237, 247, 1) !important;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 6px;
+    height: 5px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #f2f2f2  !important;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: rgba(43, 61, 81, 1) !important;
+    border-radius: 4px;
+    border: 3px solid rgba(43, 61, 81, 1) !important;
+}
+
+.test{
+	color : rgba(43, 61, 81, 1);
+}
+
+.navbar-custom {
+	background-color : rgba(43, 61, 81, 1) !important;
+}
+
+.table-action {
+	min-width: 250px;
+	width: 215px;
+}
+
+*[disabled]:hover, *[readonly]:hover {
+	cursor: not-allowed !important;
+}
+
+.flatpickr[readonly] {
+	cursor: pointer !important;
+	background-color : #FFF !important;
+}
+
+.flatpickr {
+	cursor: default !important;
+}
+
+.no-results {
+	text-align: center !important;
+}
+
+.no-results i {
+	font-size: 30px !important;
+}
+
+.paginate {
+	display: inline-flex;
+	float: right;
+	gap: 5px;
+}
+
+.paginate a {
+	color: black;
+	float: left;
+	padding: 8px 16px;
+	text-decoration: none;
+	transition: background-color .3s;
+}
+
+.pagination_numbers {
+	display: flex;
+}
+
+.page-item .page-link:hover, .page-item a:focus, .page-item a:active {
+	color : #4a81d4 !important;
+    border-color: #4a81d4 !important;
+}
+
+.page-item.active .page-link {
+	background-color: #4a81d4 !important;
+    border-color: #4a81d4 !important;
+}
+
+.page-item.active a:hover, .active:hover {
+	color : #000 !important;
+}
+
+.pagination {
+	justify-content: center;
+	margin: auto;
+}
+
+.result-list {
+	padding-bottom: 5px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #eee;
+    margin-left: 10px;
+    width: 98%;
+}
+
+.bg-light-blue {
+	background-color: rgba(74, 129, 212, .7) !important;
+}
+
+.active {
+	color : #FFFFFF !important;
+}
+
+.icon-dual {
+	color : rgba(0, 0, 0, .3);
+}
+
+.sidebar-list:hover, a:hover {
+	color : rgba(51, 153, 255, .5) !important;
+}
+
+.menuitem-active {
+	background-color: rgba(51, 153, 255, .5);
+}
+
+.form-group, .sidebar-list {
+	padding-bottom: 5px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #eee;
+}
+
+.w-70 {
+	width: 70px !important;
+}
+
+#page_title {
+	height: 50px;
+}
+
+#page_title div {
+	height: inherit;
+}
+
+#page_title h4 {
+	height: inherit;
+	line-height: 50px !important;
+}
+
+.custom-logo-box {
+	height: 70px;
+    width: 240px;
+    float: none !important;
+    transition: all .1s ease-out;
+    margin: auto;
+}
+
+.modal-header {
+	padding-bottom: 5px;
+    margin-bottom: 5px;
+    border-bottom: 2px solid #eee;
+    box-shadow: 0 1px 1px rgb(0 0 0 / 5%)
+}
+
+.close {
+	padding: 0 !important;
+	margin: 0 !important;
+}
+
+.staff-buttons {
+	gap: 10px;
+	display: block;
+	text-align: center;
+}
+
+#loading-modal {
+    background-color: rgba( 255, 255, 255, .8 );
+}
+
+#loading-modal .modal-content {
+    background-color : inherit;
+}
+
+.search-card, .custom-card {
+	border-color: rgba(217, 237, 247, .8) !important;
+    border-width: thin;
+}
+
+.bg-info {
+	background-color: rgba(217, 237, 247, .8) !important;
+}
+
+.card, .page-title-box {
+	border-color: #ddd;
+	border: 1px solid rgba(0,0,0,.125);
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgb(0 0 0 / 5%);
+}
+
+.card-header {
+	/*border-bottom-left-radius : 4px;*/
+	/*border-bottom-right-radius: 4px;*/
+	border-bottom: 1px solid rgba(0,0,0,.125);
+	padding : 1rem;
+}
+
+.logo-box {
+	width: 200px;
+}
+
+.card, .page-title-box {
+	background-color: rgb(255, 255, 255, .8) !important;
+}
+.content-page {
+	background-color : #f2f2f2 !important;
+}
+
+.bg-secondary {
+	background-color: rgba(245, 245, 245, 1) !important;
+}
+
+.bg-info .card-title {
+	color : #31708F !important;
+}
+
+.table-custom thead, .bg-custom {
+	background-color : rgba(217, 237, 247, 1) !important;
+}
+
+.text-custom {
+	color : rgba(217, 237, 247, 1) !important;
+}
+
+.hide_el {
+	display: none !important;
+}
+
+.min-width-200 {
+	min-width: 200px !important;
+}
+
+.attendance-min-width {
+	min-width: 100px !important;
+}
+
+.horizontal-scroll {
+	overflow-x: auto !important;
+	overflow-y: hidden !important;
+}
+
+.first-input-row {
+	margin-top : -10px !important;
+}
+
+.checkbox label {
+    margin-bottom: 10px !important;
+}
+
+.jq-toast-wrap {
+	width: 300px !important;
+}
+
+input[readonly], input[disabled], select[readonly], select[disabled],
+textarea[readonly], textarea[disabled] {
+	background-color: rgba(136, 136, 136, .1) !important;
+}
+
+.modal-custom-md {
+	max-width: 575px !important;
+}
+
+.checkbox input[type=checkbox]:disabled+label, .radio input[type=radio]:disabled+label {
+	opacity: 1 !important;
+}
+
+.card-body {
+	padding: 0.5rem !important;
+}
+
+.input-group-picker-sm {
+	height: calc(1.5em + .56rem + 2px);
+    font-size: .7875rem;
+    line-height: 1.5;
+    border-radius: .2rem;
+}
+
+.display-block {
+	display: block !important;
+}
+
+.p-0 {
+	padding : 0 !important;
+}
+
+.flex-center {
+	justify-content:center !important;
+}
+
+.modal-lg-semi {
+	max-width: 900px;
+}
+
+.no-overflow {
+	overflow: hidden !important;
+}
+
+.modal-body-overflow {
+	height: 700px !important;
+	overflow : auto !important;
+}
+
+/*
+	Mobile View
+*/
+@media(max-width: 500px) {
+	#head_date_time {
+		font-size: 10px !important;
+	}
+}

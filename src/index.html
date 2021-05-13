@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <meta charset="utf-8" />
+        <title>Fcf Support Services - Payroll</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="FCF Support Services - Payroll, CRM" name="description" />
+        <meta content="Christian Gasper" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- plugin css -->
+        <link href="assets/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/jquery-toast-plugin/jquery.toast.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+        <!-- App css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bs-default-stylesheet" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" id="app-default-stylesheet" />
+
+        <link href="assets/css/bootstrap-dark.min.css" rel="stylesheet" type="text/css" id="bs-dark-stylesheet" />
+        <link href="assets/css/app-dark.min.css" rel="stylesheet" type="text/css" id="app-dark-stylesheet" />
+        <link href="assets/libs/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+        <!-- icons -->
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+
+        <!-- Custom CSS -->
+        <link href="assets/custom-css/styles.css" rel="stylesheet" type="text/css" />
+    </head>
+
+    <body class="loading">
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            <!-- Topbar Start -->
+            <div class="navbar-custom">
+                <div class="container-fluid">
+                    <ul class="list-unstyled topnav-menu float-right mb-0">
+                        <li class="d-inline-block">
+                            <h4 class="nav-link" id="head_date_time"></h4>
+                            <!-- <a class="nav-link dropdown-toggle arrow-none waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                                <i class="fe-search noti-icon"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-lg dropdown-menu-right p-0">
+                                <form class="p-3">
+                                    <input type="text" class="form-control" placeholder="Search ..." aria-label="Recipient's username">
+                                </form>
+                            </div> -->
+                        </li>
+                    </ul>
+                    
+
+                     <!-- LOGO -->
+                    <div class="logo-box">  
+                        <a href="index.html" class="logo logo-light text-center">
+                            <span class="logo-sm">
+                                <img src="assets/images/fcf_logo1.png" alt="" height="50">
+                            </span>
+                            <span class="logo-lg">
+                                <img src="assets/images/fcf_logo1_sm.png" alt="" height="70">
+                            </span>
+                        </a>
+                    </div>
+                    <!-- Mobile -->
+                    <ul class="list-unstyled topnav-menu topnav-menu-left m-0">
+                        <li>
+                            <button class="button-menu-mobile waves-effect waves-light">
+                                <i class="fe-menu"></i>
+                            </button>
+                        </li>
+
+                        <li>
+                            <!-- Mobile menu toggle (Horizontal Layout)-->
+                            <a class="navbar-toggle nav-link" data-toggle="collapse" data-target="#topnav-menu-content">
+                                <div class="lines">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </a>
+                            <!-- End mobile menu toggle-->
+                        </li>
+                    </ul>
+                   
+                    
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <!-- end Topbar -->
+
+            <!-- ========== Left Sidebar Start ========== -->
+            <div class="left-side-menu" id="side_bar">
+
+                
+                <!-- Sidebar -left -->
+
+            </div>
+            <!-- Left Sidebar End -->
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+                    <div id="page_title"></div>
+                    <!-- Start Content-->
+                    <div class="container-fluid" id="page_container">
+                        
+                    </div>
+                    <!-- container -->
+
+                </div> <!-- content -->
+
+                <!-- Footer Start -->
+                <footer class="footer">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-6">
+                                2015 - <span id='footer_to_date'></span> &copy; Powered by <a target="_blank" href="https://web.facebook.com/FCF-Support-Services-113430083786199/" class="open_browser">Fcf Support Services</a> 
+                            </div>
+                            <div class="col-md-6">
+                               <!--  <div class="text-md-right footer-links d-none d-sm-block">
+                                    <a href="javascript:void(0);">About Us</a>
+                                    <a href="javascript:void(0);">Help</a>
+                                    <a href="javascript:void(0);">Contact Us</a>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+                <!-- end Footer -->
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+
+        </div>
+        <!-- Loader -->
+        <div style="margin:auto !important;" id="inner_loader" class="inner_loader spinner-border text-blue m-2 hide_el" role="status"></div>
+        <!-- Loader end -->
+        <!-- No Results -->
+        <div id="no_result" class="no-results hide_el">
+            <i class="fas fa-ban"></i>
+            <h4>No Results Found</h4>
+        </div>
+        <!-- No Results End -->
+        <!-- END wrapper -->
+        <div id="modal"></div>
+        <!-- <script src="assets/js/jquery.min.js"></script> -->
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+        <!-- App js-->
+        <script src="assets/js/app.min.js"></script>
+        <script src="assets/libs/jquery-toast-plugin/jquery.toast.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"></script>
+        <script src="assets/libs/select2/js/select2.min.js"></script>
+        <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+        <!-- Custom Js -->
+        <!-- <script type="text/javascript" src="bundle.js"></script> -->
+        <script type="text/javascript" src="assets/custom-js/main.js"></script>
+        <script type="text/javascript" src="assets/custom-js/attendance.js"></script>
+        <script type="text/javascript" src="assets/custom-js/employee.js"></script>
+        <script type="text/javascript" src="assets/custom-js/designation.js"></script>
+        <script type="text/javascript" src="assets/custom-js/holidays.js"></script>
+        <div id="scripts"></div>
+    </body>
+</html>

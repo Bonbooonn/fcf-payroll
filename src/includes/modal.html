@@ -1,0 +1,462 @@
+<div style="z-index: 999999" class="modal" tabindex="-1" role="dialog" aria-hidden="true" id="loading-modal">
+    <div class="modal-dialog modal-sm modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div style="margin:auto !important;display: inherit !important;" class="spinner-border text-blue m-2" role="status"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Add New Staff Modal -->
+<div class="modal fade" id="new_employee_modal">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title m-auto modal_header"></h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="thue">×</button>
+            </div>
+            <div class="modal-body">
+                <form id="new_employee_form">
+                    <h4 style="margin:-5px">Employee Information</h4>
+                    <hr>
+                    <input type="hidden" class="form-control form-control-sm" name="employee_id" />
+                    <div class="form-group row first-input-row">
+                        <label class="col-form-label col-sm-2">* First Name : </label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control form-control-sm w-100" name="first_name" required="true" />
+                        </div>
+
+                        <label class="col-form-label col-sm-2">Middle Name : </label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control form-control-sm w-100" name="middle_name" required="true" />
+                        </div>
+                        
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-form-label col-sm-2">* Last Name : </label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control form-control-sm w-100" name="last_name" required="true" />
+                        </div>
+
+                        <label class="col-form-label col-sm-2">Email : </label>
+                        <div class="col-sm-4">
+                            <input type="email" class="form-control form-control-sm w-100" name="email"/>
+                        </div>
+                        
+                    </div>
+
+                    <div class="form-group row">
+
+                        <label class="col-form-label col-sm-2">* Mobile # : </label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control form-control-sm w-100 number_with_plus" name="phone" required="true"/>
+                        </div>
+
+                        <label class="col-form-label col-sm-2">* Designation : </label>
+                        <div class="col-sm-4">
+                            <select class="form-control form-control-sm w-100" data-val="" name="designation_id" id="designation_id" required="true"></select>
+                        </div>
+                        
+                    </div>
+
+                    <div class="form-group row">
+
+                        <label class="col-form-label col-sm-2">Daily Salary : </label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control form-control-sm w-100 number_with_dot" name="daily_salary" />
+                        </div>
+
+                        <label class="col-form-label col-sm-2">Monthly Salary : </label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control form-control-sm w-100 number_with_dot" name="monthly_salary" />
+                        </div>
+
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-form-label col-sm-2">Status :</label>
+                        <div class="col-sm-4">
+                            <select class="form-control form-control-sm w-100" id="staff_status" name="status" >
+                                <option value="1">Active</option>
+                                <option value="0">Not Active</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group staff-buttons" style="gap:10px">
+                        <button class="btn btn-sm btn-blue col-sm-2 save_btn" data-submit_type="1" type="submit">Save</button>
+                        <button class="btn btn-sm btn-success col-sm-3 save_new_btn" data-submit_type="0" type="submit">Save & New</button>
+                        <button class="btn btn-sm btn-secondary col-sm-2 reset_btn" data-modal="new_employee_modal" type="reset">Cancel</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Add New Staff Modal End -->
+
+<!-- Add New Designation Modal -->
+<div class="modal fade" id="new_designation_modal">
+    <div class="modal-dialog modal-custom-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title m-auto modal_header"></h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="thue">×</button>
+            </div>
+            <div class="modal-body">
+                <form id="new_designation_form">
+                    <input type="hidden" class="form-control-sm form-control" name="designation_id" />
+                    <div class="form-group row">
+                        <label class="col-form-label col-sm-3">* Designation : </label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control form-control-sm w-100" name="designation" required="true" />
+                        </div>
+                    </div>
+
+                    <h4>Deductions</h4>
+                    <hr>
+
+                    <div class="form-group row first-input-row">
+                        <label class="col-form-label col-sm-2">SSS :</label>
+                        <div class="col-sm-1">
+                            <div class="checkbox checkbox-info mb-2">
+                                <input id="sss_check" type="checkbox" value="1">
+                                <label for="sss_check">
+                                    
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="text" data-read_prop="1" class="form-control form-control-sm number_only" id="sss_estimated" name="sss" placeholder="Estimated deduction" readonly="true" />
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-form-label col-sm-2">Phil Health :</label>
+                        <div class="col-sm-1">
+                            <div class="checkbox checkbox-info mb-2">
+                                <input id="phil_health_check" type="checkbox"  value="1">
+                                <label for="phil_health_check">
+                                    
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="text" data-read_prop="1" class="form-control form-control-sm number_only" id="phil_health_estimated" name="phil_health" placeholder="Estimated deduction"  readonly="true" />
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-form-label col-sm-2">Pag-ibig :</label>
+                        <div class="col-sm-1">
+                            <div class="checkbox checkbox-info mb-2">
+                                <input id="pag_ibig_check" type="checkbox" value="1">
+                                <label for="pag_ibig_check">
+                                    
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="text" data-read_prop="1" class="form-control form-control-sm number_only" id="pag_ibig_estimated" name="pag_ibig" placeholder="Estimated deduction"  readonly="true" />
+                        </div>
+                        
+                    </div>
+
+
+                    <div class="form-group staff-buttons" style="gap:10px">
+                        <button class="btn btn-sm btn-blue col-sm-2 save_btn" data-submit_type="1" type="submit">Save</button>
+                        <button class="btn btn-sm btn-success col-sm-3 save_new_btn" data-submit_type="0" type="submit">Save & New</button>
+                        <button class="btn btn-sm btn-secondary col-sm-2 reset_btn" data-modal="new_designation_modal" type="reset">Cancel</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Add New Designation Modal End -->
+
+<!-- Add New Holiday Modal -->
+<div class="modal fade" id="new_holiday_modal">
+    <div class="modal-dialog modal-custom-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title m-auto modal_header"></h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="thue">×</button>
+            </div>
+            <div class="modal-body">
+                <form id="new_holiday_form">
+                    <input type="hidden" class="form-control-sm form-control" name="holiday_id" />
+                    <div class="form-group row">
+                        <label class="col-form-label col-sm-3">* Holiday : </label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control form-control-sm w-100" name="holiday" required="true" />
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-form-label col-sm-3">* Holiday Date: </label>
+                        <div class="input-group col-sm-6" id="target_date_picker_div">
+                            <input type="text" class="form-control form-control-sm flatpickr flatpickr-input" id="holiday_date_picker" name="holiday_date" required="true">
+                            <div class="input-group-append input-group-picker-sm">
+                                <span style="height: inherit;" class="input-group-text"> <i class="fas fa-calendar-alt"></i> </span>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-form-label col-sm-3">* Holiday Type: </label>
+                        <div class="input-group col-sm-6" id="target_date_picker_div">
+                            <select class="form-control form-control-sm w-100" id="holiday_type" name="holiday_type" required="true">
+                                <option value="1">Regular</option>
+                                <option value="2">Special Non Working</option>
+                                <option value="3">Special Working</option>
+                            </select>
+                            
+                        </div>
+                    </div>
+
+                    <div class="form-group staff-buttons" style="gap:10px">
+                        <button class="btn btn-sm btn-blue col-sm-2 save_btn" data-submit_type="1" type="submit">Save</button>
+                        <button class="btn btn-sm btn-success col-sm-3 save_new_btn" data-submit_type="0" type="submit">Save & New</button>
+                        <button class="btn btn-sm btn-secondary col-sm-2 reset_btn" data-modal="new_holiday_modal" type="reset">Cancel</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Add New Holiday Modal End -->
+
+<!-- Income Modal -->
+<div class="modal fade no-overflow" id="income_modal">
+    <div class="modal-dialog modal-lg-semi">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title m-auto modal_header"></h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="thue">×</button>
+            </div>
+            <div class="modal-body modal-body-overflow">
+                <h4 style="margin:-5px">Employee Information</h4>
+                <hr>
+                <div class="form-group row">
+                    <label class="col-form-label col-sm-3">Full Name : </label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control form-control-sm w-100" name="ee_full_name" readonly="true" />
+                    </div>
+
+                    <label class="col-form-label col-sm-3">Designation : </label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control form-control-sm w-100" name="designation" readonly="true" />
+                    </div>
+                </div>
+                <h4 style="margin-bottom:-5px">Salary Information</h4>
+                <hr>
+                <div class="form-group row">
+                    <label class="col-form-label col-sm-3">Daily Salary : </label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control form-control-sm w-100" name="daily_sal" readonly="true" />
+                    </div>
+
+                    <label class="col-form-label col-sm-3">Monthly Salary(Gross Pay) : </label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control form-control-sm w-100" name="monthly_sal" readonly="true" />
+                    </div>
+                </div>
+                
+                <h4 style="margin-bottom:-5px">Worked Days Information</h4>
+                <hr>
+                <div class="form-group row">
+                    <label class="col-form-label col-sm-3">Number of Absences : </label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control form-control-sm w-100" name="absences" readonly="true" />
+                    </div>
+
+                    <label class="col-form-label col-sm-3">Worked Days : </label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control form-control-sm w-100" name="worked_days" readonly="true" />
+                    </div>
+                </div>
+
+                <h4 style="margin-bottom:-5px">Deductions</h4>
+                <hr>
+
+                <div class="form-group row">
+                    <label class="col-form-label col-sm-3">SSS: </label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control form-control-sm w-100" name="sss_info" readonly="true" />
+                    </div>
+
+                    <label class="col-form-label col-sm-3">Pag-ibig: </label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control form-control-sm w-100" name="pag_ibig_info" readonly="true" />
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-form-label col-sm-3">Philhealth: </label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control form-control-sm w-100" name="phil_health_info" readonly="true" />
+                    </div>
+
+                    <label class="col-form-label col-sm-3">Income Tax: </label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control form-control-sm w-100" name="income_tax" readonly="true" />
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-form-label col-sm-3">Cash Advance: </label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control form-control-sm w-100" name="cash_advance" />
+                    </div>
+
+                    <label class="col-form-label col-sm-3">Medical: </label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control form-control-sm w-100" name="medical" />
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-form-label col-sm-3">CB PPE: </label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control form-control-sm w-100" name="cb_ppe" />
+                    </div>
+
+                    <label class="col-form-label col-sm-3">Food Credit: </label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control form-control-sm w-100" name="food_credit" />
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-form-label col-sm-3">Late: </label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control form-control-sm w-100" name="late" />
+                    </div>
+
+                    <label class="col-form-label col-sm-3">Utilities: </label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control form-control-sm w-100" name="utilities" />
+                    </div>
+                </div>
+
+                <h4 style="margin-bottom:-5px">Receivables</h4>
+                <hr>
+
+                <div class="form-group row">
+                    <label class="col-form-label col-sm-3">Overtime(hrs): </label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control form-control-sm w-100" name="overtime_hrs" readonly="true" />
+                    </div>
+
+                    <label class="col-form-label col-sm-3">Sunday: </label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control form-control-sm w-100" name="sunday_work" readonly="true" />
+                    </div>
+
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-form-label col-sm-3">Legal Holiday: </label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control form-control-sm w-100" name="regulay_holiday" readonly="true" />
+                    </div>
+
+                    <label class="col-form-label col-sm-3">OT(Legal Holiday): </label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control form-control-sm w-100" name="ot_regular_holiday" readonly="true" />
+                    </div>
+
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-form-label col-sm-3">Special Holiday: </label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control form-control-sm w-100" name="special_holiday" readonly="true" />
+                    </div>
+
+                    <label class="col-form-label col-sm-3">OT(Special Holiday): </label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control form-control-sm w-100" name="ot_special_holiday" readonly="true" />
+                    </div>
+
+                </div>
+
+
+                <div class="form-group row">
+                    <label class="col-form-label col-sm-3">Adjustment: </label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control form-control-sm w-100" name="adjustment" />
+                    </div>
+
+                    <label class="col-form-label col-sm-3">Load Allowance: </label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control form-control-sm w-100" name="load_allowance" />
+                    </div>
+
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-form-label col-sm-3">Incentive: </label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control form-control-sm w-100" name="incentive" />
+                    </div>
+
+                    <label class="col-form-label col-sm-3">Night Diff: </label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control form-control-sm w-100" name="night_diff" />
+                    </div>
+
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-form-label col-sm-3">Salary(Gross Pay): </label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control form-control-sm w-100" name="salary_gross_pay" readonly="true" />
+                    </div>
+
+                    <label class="col-form-label col-sm-3">Salary(Net Pay): </label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control form-control-sm w-100" name="salary_net_pay" readonly="true" />
+                    </div>
+
+                </div>
+
+<!--                 <div class="form-group staff-buttons" style="gap:10px">
+                    <button class="btn btn-sm btn-blue col-sm-2 save_btn" data-submit_type="1" type="submit">Save</button>
+                    <button class="btn btn-sm btn-success col-sm-3 save_new_btn" data-submit_type="0" type="submit">Save & New</button>
+                    <button class="btn btn-sm btn-secondary col-sm-2 reset_btn" data-modal="new_holiday_modal" type="reset">Cancel</button>
+                </div> -->
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Income Modal End -->
+
+<!-- confirm modal -->
+<div class="modal fade" id="confirm_modal">
+    <div class="modal-dialog modal-md modal-semi-top" style="margin: 50px auto;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title m-auto modal_header" style='color : #000000'></h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="thue">×</button>
+            </div>
+            <form id="confirm_form">
+                <div id="delete_inputs"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-blue" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-danger btn_delete">Yes</button>
+                </div>
+            </form>
+            
+        </div>
+    </div>
+</div>
+<!-- confirm modal end -->
